@@ -13,12 +13,12 @@ Instructions:
 STUDENT_NAME = "Maria Carter"  # Example: "Alice Johnson"
 
 
-def load_temperatures(filepath):
+def load_temperatures(filepath): # function
     """Load temperature data from CSV file.
 
     Returns list of dictionaries with date, high_f, low_f, precip_in.
     """
-    data = []
+    data = [] 
     with open(filepath, "r") as f:
         header = f.readline().strip().split(",")
         for line in f:

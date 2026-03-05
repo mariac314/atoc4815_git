@@ -1,6 +1,7 @@
 """
-Collaborative Weather Analysis
-ATOC 4815/5815 - Git Collaboration Exercise
+Collaborative Weather Analysis -- edited on main file
+
+ATOC 4815/5815 - Git Collaboration Exercise -- edit again on main
 
 Instructions:
   - Partner A: Complete the functions in SECTION A (temperature analysis)
@@ -12,7 +13,7 @@ When both sections are complete, run:
 
 The main() function calls everything and prints a full weather report.
 """
-
+# Edited by Maria 
 # ============================================================
 # SECTION A  --  Partner A: Temperature Analysis
 # ============================================================
@@ -32,8 +33,8 @@ def fahrenheit_to_celsius(temp_f):
     float
         Temperature in Celsius.
     """
-    # TODO (Partner A): implement the conversion
-    pass
+    temp_c = (temp_f-32) * 5/9
+    return temp_c
 
 
 def celsius_to_fahrenheit(temp_c):
@@ -51,8 +52,8 @@ def celsius_to_fahrenheit(temp_c):
     float
         Temperature in Fahrenheit.
     """
-    # TODO (Partner A): implement the conversion
-    pass
+    temp_f = temp_c * 9/5 + 32
+    return temp_f
 
 
 def daily_temp_range(high_f, low_f):
@@ -70,8 +71,13 @@ def daily_temp_range(high_f, low_f):
     dict
         {"range_f": float, "range_c": float}
     """
-    # TODO (Partner A): compute range in F and convert to C
-    pass
+    range_f = high_f - low_f
+    range_c = fahrenheit_to_celsius(high_f) - fahrenheit_to_celsius(low_f)
+    temp_range = {
+        "range_f": range_f,
+        "range_c": range_c
+    }
+    return temp_range
 
 
 # ============================================================
