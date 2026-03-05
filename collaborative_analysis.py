@@ -98,7 +98,13 @@ def wind_chill(temp_f, wind_mph):
     """
     # TODO (Partner B): implement the NWS wind chill formula
     # Return None if temp_f > 50 or wind_mph < 3
-    pass
+    if temp_f > 50 or wind_mph < 3:
+        return None
+
+    # compute wind chill
+    wc = 35.74 + 0.6215*temp_f - 35.75*(wind_mph**0.16) + 0.4275*temp_f*(wind_mph**0.16)
+
+    return wc
 
 
 def heat_index(temp_f, rh):
@@ -124,7 +130,23 @@ def heat_index(temp_f, rh):
     """
     # TODO (Partner B): implement the simplified heat index
     # Return None if temp_f < 80
-    pass
+    if temp_f < 80:
+        return None
+
+    T = temp_f
+    RH = rh
+
+    hi = (-42.379
+          + 2.04901523 * T
+          + 10.14333127 * RH
+          - 0.22475541 * T * RH
+          - 0.00683783 * T**2
+          - 0.05481717 * RH**2
+          + 0.00122874 * T**2 * RH
+          + 0.00085282 * T * RH**2
+          - 0.00000199 * T**2 * RH**2)
+
+    return hi
 
 
 # ============================================================
